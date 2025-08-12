@@ -1,15 +1,19 @@
 import sys
 from stats import get_number_of_words, count_symbols, sort_symbols_dictionary
 
-if len(sys.argv) < 2:
-    print("Usage: python3 main.py <path_to_book>")
-    sys.exit(1)
 
-def get_book_text(filepath: str):
-    with open(filepath) as f:
-        return f.read()
+
+
 
 def main():
+    def get_book_text(filepath: str):
+        with open(filepath) as f:
+            return f.read()
+
+    if len(sys.argv) < 2:
+        print("Usage: python3 main.py <path_to_book>")
+        sys.exit(1)
+
     file_path = sys.argv[1]
     text = get_book_text(file_path)
     print("============ BOOKBOT ============")
